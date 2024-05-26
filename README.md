@@ -8,10 +8,10 @@
 6. [Related Work](#v-related-work)
 
 ## Members
-- 강민성 | 한양대 컴퓨터소프트웨어학부
-- 김승윤 | 한양대 경영학부
-- 오세원 | 한양대 실내건축디자인학과
-- 황윤영 | 한양대 경영학부
+- 강민성 | 한양대 컴퓨터소프트웨어학부 ㅣ dennisclub@naver.com
+- 김승윤 | 한양대 경영학부 ㅣ purekim333@gmail.com
+- 오세원 | 한양대 실내건축디자인학과 ㅣ tpdnjs0805@gmail.com
+- 황윤영 | 한양대 경영학부 ㅣ yeong5799@gmail.com
   
 ## I. Proposal
 ### Motivation
