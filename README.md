@@ -810,3 +810,8 @@ LSTM 기반 예측 모델을 통한 학습이 매우 잘 되었고, 예측 결�
 * 김승윤 : data visualization, methodology introduction
 * 오세원 : YouTube recording
 * 황윤영 : write up Github, make conclusion
+
+<br>
+
+## VIII. Recording Link
+* https://drive.google.com/file/d/1E7InyHzHSrmLSndiRikVJgiFYkDGTPn_/view?usp=sharing
