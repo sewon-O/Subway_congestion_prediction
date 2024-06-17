@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README (3).md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%EC%A7%80%ED%95%98%EC%B2%A0-%ED%98%BC%EC%9E%A1%EB%8F%84-%EC%98%88%EC%B8%A1%ED%95%B4%EB%B3%B4%EA%B8%B0">지하철 혼잡도 예측해보기</h1>
+<h2 id="%EB%AA%A9%EC%B0%A8">목차</h2>
+<ol>
+<li><a href="#members">Members</a></li>
+<li><a href="#i-proposal">Proposal</a></li>
+<li><a href="#ii-datasets">Datasets</a></li>
+<li><a href="#iii-methodology">Methodology</a></li>
+<li><a href="#iv-evaluation--analysis">Evaluation &amp; Analysis</a></li>
+<li><a href="#v-related-work-eg-existing-studies">Related Work</a></li>
+<li><a href="#vi-conclusion-discussion">Conclusion</a></li>
+<li><a href="#vii-credits">Credits</a></li>
+</ol>
+<br>
+<h2 id="members">Members</h2>
+<ul>
+<li>강민성 | 한양대 컴퓨터소프트웨어학부</li>
+<li>김승윤 | 한양대 경영학부</li>
+<li>오세원 | 한양대 실내건축디자인학과</li>
+<li>황윤영 | 한양대 경영학부</li>
+</ul>
+<br>
+<h2 id="i-proposal">I. Proposal</h2>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/a3d4eca5-5541-4cef-9804-78710188b26c" alt="image">
+<br></p>
+<h3 id="motivation">Motivation</h3>
+<p>서울은 교통체증이 다른 지역에 비해 심하며, 대중교통 수단이 다른 지역에 비해 잘 발달해 있다. 서울 및 수도권은 전국 중 지하철 이용 비율이 가장 높은 지역이기도 하다. 통학 및 통근자 중 지하철을 이용하는 비중은 상당히 크다. 서울시 열린데이터광장 제공 데이터에 따르면, 2023년 지하철만을 이용한 통근·통학 비율은 12.9%, 지하철+버스 이용 통근·통학 비율은 18.8%, 승용차+지하철 이용 통근·통학 비율은 1.5%이다. 특히 출퇴근 시간대에는 '지옥철'이라고 부를 정도로 사람들이 발 디딜 틈도 없을 만큼 탑승하며, 혼잡하다. 이러한 문제는 도시 생활의 질에 큰 영향을 미친다. 지하철 혼잡도를 분석하고 예측하여 어떤 시간대에 어느 노선과 어느 구간이이 혼잡한 지 미리 알 수 있다면, 승객들은 이에 맞게 지하철 이용 시간이나 경로를 조정함으로써 더 쾌적하게 지하철을 이용할 수 있을 것이다.</p>
+<h3 id="goal">Goal</h3>
+<p>이 프로젝트는 2022년 서울 지하철의 다양한 데이터를 분석하고 시각화하여, 시간대별, 요일별로 승하차 인원 및 환승 인원의 패턴을 파악한다. 이러한 데이터를 학습시킨 것을 바탕으로 지하철 혼잡도를 예측하는 것을 목적으로 한다. 이를 통해 지하철 이용에 편의를 제공하며, 교통 혼잡 문제 해결을 위한, 지하철 운영 효율성을 높이기 위한 인사이트를 제공한다.</p>
+<h3 id="%EC%A7%80%ED%95%98%EC%B2%A0-%ED%98%BC%EC%9E%A1%EB%8F%84%EB%9E%80">지하철 혼잡도란</h3>
+<p>혼잡도란 열차에 얼마나 많은 사람이 탑승했는지를 알려주는 수치로, 실제 승차 인원을 승차 정원으로 나눈 값을 말한다. 수도권 전철 1-9호선, 경의중앙선, 수인분당선 등 수도권 주요 노선에서 전동차 한 칸의 정원은 약 160명이다.
+실제로는 지하철에 어떻게 적용되고 있을까?
+서울교통공사에 따르면, 전동차의 각 차량마다 무게를 감지하는 하중 감지 센서가 내장돼, 이는 실시간으로 객차 내 탑승 무게를 감지하고 측정한다. 칸별 정원 160명의 무게를 기준으로 계산해 79% 이하면 ‘여유’, 80%-129% 면 ‘보통’, 130% 이상일 경우 ‘혼잡’으로 분류한다. 즉, 사람의 몸무게를 65kg으로 가정하면, 127명(약 8.2ton)보다 적은 수가 타면 ‘여유’, 128-207명(8.2-13.4ton)이 타면 ‘보통’, 208명(13.4ton)보다 많이 타면 ‘혼잡’으로 표시되는 것이다. 출·퇴근 등 매우 혼잡한 시간대엔 정원의 200%까지도 탑승한다. 한 편성당(10량) 전체 차량 중량은 343ton으로 칸별 중량은 약 34.3ton이며, 정원의 2배인 320명(약 20.8ton)이 타더라도 기계적으로 안전에 이상은 없다.
+<br> (출처 : https://www.epnc.co.kr/news/articleView.html?idxno=82928) <br>
+혼잡도가 우려되는 수준으로 판단해 열차 증차 등 혼잡도 완화 조치가 필요하다고 판단되는 시점은 150%이다.</p>
+<br>
+<h2 id="ii-datasets">II. Datasets</h2>
+<h3 id="datasets">Datasets</h3>
+<ul>
+<li>데이터셋 링크</li>
+</ul>
+<pre class="hljs"><code><div>서울교통공사 역별 일별 시간대별 승하차인원 정보 : http://data.seoul.go.kr/dataList/OA-12921/F/1/datasetView.do
+서울교통공사 환승역 환승인원정보 : http://data.seoul.go.kr/dataList/OA-12033/S/1/datasetView.do
+서울교통공사 지하철혼잡도정보 : http://data.seoul.go.kr/dataList/OA-12928/F/1/datasetView.do
+</div></code></pre>
+<h3 id="dataset-%EC%A0%84%EC%B2%98%EB%A6%AC">Dataset 전처리</h3>
+<ol>
+<li>필요한 라이브러리 가져오기</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+</div></code></pre>
+<br>
+<ol start="2">
+<li>혼잡도 및 승하차 인원 데이터 로드하기</li>
+</ol>
+<ul>
+<li>2022년 지하철 혼잡도와 승하차 인원 데이터를 csv파일에서 가져온다.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">#load number of embarking/disembarking people of each station of year 2022</span>
+station = pd.read_csv(<span class="hljs-string">"서울교통공사_역별 일별 시간대별 승하차인원 정보_20221231.csv"</span>, encoding=<span class="hljs-string">'cp949'</span>)
+station.head
+</div></code></pre>
+<ul>
+<li>데이터 타입을 확인한다.</li>
+</ul>
+<pre class="hljs"><code><div>print(station.dtypes)
+</div></code></pre>
+<br>
+<ol start="3">
+<li>역명 정리하기</li>
+</ol>
+<ul>
+<li>병기역명/부역명을 제거하고, 4호선 이수역과 7호선 총신대입구역은 사실상 같은 역이기 때문에, 명칭을 '총신대입구'로 통일한다. 그리고 서울교통공사 주관이 아니라 데이터가 없는 특정 역들을 제거한다.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> re
+station[<span class="hljs-string">'역명'</span>] = station[<span class="hljs-string">'역명'</span>].apply(<span class="hljs-keyword">lambda</span> x: re.sub(<span class="hljs-string">r'\(.*\)'</span>, <span class="hljs-string">''</span>, x).strip())
+station[<span class="hljs-string">'역명'</span>] = station[<span class="hljs-string">'역명'</span>].replace(<span class="hljs-string">'이수'</span>, <span class="hljs-string">'총신대입구'</span>)
+stations_to_remove = [<span class="hljs-string">'까치울'</span>, <span class="hljs-string">'부천시청'</span>, <span class="hljs-string">'부평구청'</span>, <span class="hljs-string">'상동'</span>, <span class="hljs-string">'신내'</span>]
+incheon = station[station[<span class="hljs-string">'역명'</span>].isin(stations_to_remove)].index
+station.drop(incheon, inplace=<span class="hljs-literal">True</span>)
+</div></code></pre>
+<br>
+<ol start="4">
+<li>환승 인원 데이터 로드 및 날짜 처리하기</li>
+</ol>
+<ul>
+<li>2022년 지하철 역별 요일별 환승인원 데이터를 csv파일에서 가져온다.</li>
+<li>'수송일자' column을 datetime 형식으로 변환하고, 'day of week' column으로 새로 만든 뒤 요일을 평일, 토요일, 일요일로 분류한다.</li>
+<li>melt 함수를 이용하여 데이터프레임을 행당 하나의 역, 시간, 요일 유형으로 변환한다.</li>
+</ul>
+<pre class="hljs"><code><div>transfer = pd.read_csv(<span class="hljs-string">"서울교통공사_역별요일별환승인원_20221231.csv"</span>, encoding=<span class="hljs-string">'cp949'</span>)
+transfer.head
+  
+station[<span class="hljs-string">'수송일자'</span>] = pd.to_datetime(station[<span class="hljs-string">'수송일자'</span>])
+station[<span class="hljs-string">'day_of_week'</span>] = station[<span class="hljs-string">'수송일자'</span>].dt.dayofweek
+station[<span class="hljs-string">'day_type'</span>] = station[<span class="hljs-string">'day_of_week'</span>].apply(<span class="hljs-keyword">lambda</span> x: <span class="hljs-string">'Weekday'</span> <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">5</span> <span class="hljs-keyword">else</span>   
+(<span class="hljs-string">'Saturday'</span> <span class="hljs-keyword">if</span> x == <span class="hljs-number">5</span> <span class="hljs-keyword">else</span> <span class="hljs-string">'Sunday'</span>))
+
+hours = [<span class="hljs-string">'06시이전'</span>, <span class="hljs-string">'06-07시간대'</span>, <span class="hljs-string">'07-08시간대'</span>, <span class="hljs-string">'08-09시간대'</span>, <span class="hljs-string">'09-10시간대'</span>, <span class="hljs-string">'10-11시간대'</span>,<span class="hljs-string">'11-12시간대'</span>, <span class="hljs-string">'12-13시간대'</span>, <span class="hljs-string">'13-14시간대'</span>, <span class="hljs-string">'14-15시간대'</span>, <span class="hljs-string">'15-16시간대'</span>, <span class="hljs-string">'16-17시간대'</span>, <span class="hljs-string">'17-18시간대'</span>, <span class="hljs-string">'18-19시간대'</span>, <span class="hljs-string">'19-20시간대'</span>, <span class="hljs-string">'20-21시간대'</span>, <span class="hljs-string">'21-22시간대'</span>, <span class="hljs-string">'22-23시간대'</span>, <span class="hljs-string">'23-24시간대'</span>, <span class="hljs-string">'24시이후'</span>]
+
+<span class="hljs-comment"># Melt the dataframe to have one row per station, hour, and day type</span>
+melted_df = pd.melt(station, id_vars=[<span class="hljs-string">'호선'</span>, <span class="hljs-string">'역번호'</span>, <span class="hljs-string">'역명'</span>, <span class="hljs-string">'승하차구분'</span>, <span class="hljs-string">'day_type'</span>], 
+                    value_vars = hours,
+                    var_name=<span class="hljs-string">'hour'</span>, value_name=<span class="hljs-string">'passenger_count'</span>)
+</div></code></pre>
+<br>
+<ol start="5">
+<li>이상치 제거 및 역, 시간대별로 승/하차 및 요일 유형에 따른 평균 승객 수 계산하여 정리하기</li>
+</ol>
+<ul>
+<li>주어진 데이터프레임에서 passenger_count 열의 이상치를 제거</li>
+<li>역, 승하차 구분, 시간대, 요일 유형별로 그룹화하여 passenger_count의 평균을 계산한다.</li>
+<li>피벗 테이블을 사용하여 각 역과 시간대별로 승차/하차 및 요일 유형에 따른 평균 승객 수를 정리한다.</li>
+<li>시간대(hour) 열을 지정된 순서로 카테고리화하여 정렬한다.</li>
+<li>역번호와 시간대별로 정렬하여 최종 데이터를 준비한다.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove_outliers</span><span class="hljs-params">(df)</span>:</span>
+    Q1 = df[<span class="hljs-string">'passenger_count'</span>].quantile(<span class="hljs-number">0.25</span>)
+    Q3 = df[<span class="hljs-string">'passenger_count'</span>].quantile(<span class="hljs-number">0.75</span>)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - <span class="hljs-number">1.5</span> * IQR
+    upper_bound = Q3 + <span class="hljs-number">1.5</span> * IQR
+    <span class="hljs-keyword">return</span> df[(df[<span class="hljs-string">'passenger_count'</span>] &gt;= lower_bound) &amp; (df[<span class="hljs-string">'passenger_count'</span>] &lt;= upper_bound)]
+
+<span class="hljs-comment"># Group by station, embark/disembark, hour, and day type to calculate the mean</span>
+grouped = melted_df.groupby([<span class="hljs-string">'호선'</span>, <span class="hljs-string">'역번호'</span>, <span class="hljs-string">'역명'</span>, <span class="hljs-string">'승하차구분'</span>, <span class="hljs-string">'hour'</span>, <span class="hljs-string">'day_type'</span>], group_keys=<span class="hljs-literal">False</span>).apply(remove_outliers)
+grouped_df = grouped.groupby([<span class="hljs-string">'호선'</span>, <span class="hljs-string">'역번호'</span>, <span class="hljs-string">'역명'</span>, <span class="hljs-string">'승하차구분'</span>, <span class="hljs-string">'hour'</span>, <span class="hljs-string">'day_type'</span>])[<span class="hljs-string">'passenger_count'</span>].mean().reset_index()
+
+<span class="hljs-comment"># Pivot the dataframe to get the desired format</span>
+pivot_df = grouped_df.pivot_table(index=[<span class="hljs-string">'호선'</span>, <span class="hljs-string">'역번호'</span>, <span class="hljs-string">'역명'</span>, <span class="hljs-string">'hour'</span>], 
+                                  columns=[<span class="hljs-string">'승하차구분'</span>, <span class="hljs-string">'day_type'</span>], values=<span class="hljs-string">'passenger_count'</span>).reset_index()
+
+<span class="hljs-comment"># Convert 'hour' to a categorical type with the specified order</span>
+pivot_df[<span class="hljs-string">'hour'</span>] = pd.Categorical(pivot_df[<span class="hljs-string">'hour'</span>], categories=hours, ordered=<span class="hljs-literal">True</span>)
+
+<span class="hljs-comment"># Sort by '역번호' and the categorical 'hour' column</span>
+pivot_df = pivot_df.sort_values(by=[<span class="hljs-string">'역번호'</span>, <span class="hljs-string">'hour'</span>]).reset_index(drop=<span class="hljs-literal">True</span>)
+
+<span class="hljs-comment">#pivot_df.to_csv('cleaned_station_data.csv', index=False, encoding='cp949')</span>
+</div></code></pre>
+<ul>
+<li>피벗 테이블의 다중 인덱스 열 이름을 단일 문자열로 결합하고, 불필요한 '_'를 제거해 깔끔하게 정리한다.</li>
+</ul>
+<pre class="hljs"><code><div>pivot_df.columns = pivot_df.columns.map(<span class="hljs-string">'_'</span>.join)
+pivot_df.columns = [col.rstrip(<span class="hljs-string">'_'</span>) <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> pivot_df.columns]
+</div></code></pre>
+<br>
+<ol start="6">
+<li>특정 역의 승하차량 보정</li>
+</ol>
+<ul>
+<li>충무로역의 3호선 승하차량이 모두 4호선의 데이터로 집계되어있어, 3,4호선 각각의 승하차량 비율에 따라 나눈다.</li>
+</ul>
+<pre class="hljs"><code><div>rate_3 = <span class="hljs-number">1304648</span> / <span class="hljs-number">2420033</span>
+rate_4 = <span class="hljs-number">1115385</span> / <span class="hljs-number">2420033</span>
+Chungmuro = pivot_df.loc[(pivot_df[<span class="hljs-string">'역명'</span>] == <span class="hljs-string">'충무로'</span>) &amp; (pivot_df[<span class="hljs-string">'호선'</span>] == <span class="hljs-number">4</span>)]
+columns = [<span class="hljs-string">'승차_Saturday'</span>, <span class="hljs-string">'승차_Sunday'</span>, <span class="hljs-string">'승차_Weekday'</span>, <span class="hljs-string">'하차_Saturday'</span>, <span class="hljs-string">'하차_Sunday'</span>, <span class="hljs-string">'하차_Weekday'</span>]
+
+<span class="hljs-comment"># Iterate over the filtered rows</span>
+<span class="hljs-keyword">for</span> idx, row <span class="hljs-keyword">in</span> Chungmuro.iterrows():
+  <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> columns:
+    pivot_df.at[idx - <span class="hljs-number">720</span>, col] = row[col] * rate_3
+  <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> columns:
+    pivot_df.at[idx, col] = row[col] * rate_4
+</div></code></pre>
+<ul>
+<li>이와 마찬가지의 방법으로
+<ul>
+<li>연신내역의 6호선 승하차량이 모두 3호선의 데이터로 집계되어있어, 3,6호선 각각의 승하차량 비율에 따라 나눈다.</li>
+<li>창동역의 1호선(경원선) 승하차량이 모두 4호선의 데이터로 집계되어있어, 1,4호선 각각의 승하차량 비율에 따라 나눈다.
+<br></li>
+</ul>
+</li>
+</ul>
+<ol start="7">
+<li>데이터 병합 및 일부 환승역 승하차량 보정</li>
+</ol>
+<ul>
+<li>'station_number.csv' 파일을 읽어와 'pivot_df'와 'station_number' 데이터를 병합한다.</li>
+<li>'pivot_df'의 내용을 'station1'으로 복사한다</li>
+<li>'transfer' 데이터프레임에서 총신대입구역(이수) 역명을 총신대입구역으로 수정하고, 열 이름을 요일 별로 나눠 변경하고, 신내역의 데이터를 제거한다.</li>
+</ul>
+<pre class="hljs"><code><div>station_number = pd.read_csv(<span class="hljs-string">"station_number.csv"</span>, encoding=<span class="hljs-string">'cp949'</span>)
+
+<span class="hljs-comment">#역번호 맞추기</span>
+pivot_df.drop(columns=<span class="hljs-string">'역번호'</span>, inplace=<span class="hljs-literal">True</span>)
+pivot_df = pd.merge(pivot_df, station_number, how=<span class="hljs-string">'inner'</span>, on=[<span class="hljs-string">'호선'</span>,<span class="hljs-string">'역명'</span>])
+
+<span class="hljs-comment">#station1 = pd.read_csv("processed_passenger_data.csv", encoding='cp949')</span>
+station1 = pivot_df.copy()
+station1.head
+
+transfer[<span class="hljs-string">'역명'</span>] = transfer[<span class="hljs-string">'역명'</span>].replace(<span class="hljs-string">'총신대입구(이수)'</span>, <span class="hljs-string">'총신대입구'</span>)
+transfer.drop(columns=<span class="hljs-string">'연번'</span>, inplace=<span class="hljs-literal">True</span>)
+transfer = transfer.rename(columns={<span class="hljs-string">'평일(일평균)'</span>: <span class="hljs-string">'환승_Weekday'</span>, <span class="hljs-string">'토요일'</span>: <span class="hljs-string">'환승_Saturday'</span>, <span class="hljs-string">'일요일'</span>: <span class="hljs-string">'환승_Sunday'</span>})
+transfer.drop(transfer[transfer[<span class="hljs-string">'역명'</span>] == <span class="hljs-string">'신내'</span>].index, inplace=<span class="hljs-literal">True</span>)
+
+transfer.head
+</div></code></pre>
+<br>
+<ul>
+<li>'station1'과 'transfer' 데이터프레임을 '역명'을 기준으로 결합하여 'station_transfer'데이터프레임을 생성한다.</li>
+<li>생성한 'station_transfer'와 배차간격을 나타내는 'interval'데이터프레임을 '호선'과 'hour' 컬럼을 기준으로 결합하여 'station_transfer' 데이터프레임을 수정한다.</li>
+<li>'hour' 컬럼값을 카테고리형으로 변환 후 정렬된 순서형 데이터로 만든다.</li>
+<li>'station_transfer'를 '역번호'와 'hour'컬럼을 기준으로 정렬하고 인덱스를 재설정하고 다시 'hour' 컬럼 값을 문자열로 변환</li>
+<li>'station_transfer'의 결측값 0으로 채우기</li>
+</ul>
+<pre class="hljs"><code><div>interval = pd.read_csv(<span class="hljs-string">"interval.csv"</span>, encoding=<span class="hljs-string">'cp949'</span>)
+
+station_transfer = pd.merge(station1, transfer, how=<span class="hljs-string">'outer'</span>, on=<span class="hljs-string">'역명'</span>)
+station_transfer = pd.merge(station_transfer, interval, how=<span class="hljs-string">'outer'</span>, on=[<span class="hljs-string">'호선'</span>, <span class="hljs-string">'hour'</span>])
+
+station_transfer[<span class="hljs-string">'hour'</span>] = pd.Categorical(station_transfer[<span class="hljs-string">'hour'</span>], categories=hours, ordered=<span class="hljs-literal">True</span>)
+station_transfer = station_transfer.sort_values(by=[<span class="hljs-string">'역번호'</span>, <span class="hljs-string">'hour'</span>]).reset_index(drop=<span class="hljs-literal">True</span>)
+
+station_transfer[<span class="hljs-string">'hour'</span>] = station_transfer[<span class="hljs-string">'hour'</span>].astype(str)
+
+station_transfer = station_transfer.fillna(<span class="hljs-number">0</span>)
+
+<span class="hljs-comment">#station_transfer.to_csv('join.csv', index=False, encoding='cp949')</span>
+
+station_transfer.head
+station_transfer.columns
+station_transfer.dtypes
+</div></code></pre>
+<ol start="8">
+<li>환승 인원 스케일링</li>
+</ol>
+<ul>
+<li>역별 승하차 인원 데이터를 이용해 환승 인원 데이터를 비율에 맞춰 스케일링하고, 최종 결과를 csv 파일로 저장한다.</li>
+</ul>
+<pre class="hljs"><code><div>new = station_transfer.copy()
+  
+<span class="hljs-keyword">for</span> station_name <span class="hljs-keyword">in</span> transfer[<span class="hljs-string">'역명'</span>]:
+  selected = station_transfer.loc[station_transfer[<span class="hljs-string">'역명'</span>] == station_name]
+  lines = pd.unique(selected[<span class="hljs-string">'호선'</span>])
+
+  <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> lines:
+    selected_line = selected.loc[selected[<span class="hljs-string">'호선'</span>] == line]
+
+    total_Saturday = selected[[<span class="hljs-string">'승차_Saturday'</span>, <span class="hljs-string">'하차_Saturday'</span>]].to_numpy().sum()
+    total_Sunday = selected[[<span class="hljs-string">'승차_Sunday'</span>, <span class="hljs-string">'하차_Sunday'</span>]].to_numpy().sum()
+    total_Weekday = selected[[<span class="hljs-string">'승차_Weekday'</span>, <span class="hljs-string">'하차_Weekday'</span>]].to_numpy().sum()
+  
+    <span class="hljs-keyword">for</span> idx, row <span class="hljs-keyword">in</span> selected.iterrows():
+      scaling_Saturday = (row[<span class="hljs-string">'승차_Saturday'</span>] + row[<span class="hljs-string">'하차_Saturday'</span>]) / total_Saturday
+      scaling_Sunday = (row[<span class="hljs-string">'승차_Sunday'</span>] + row[<span class="hljs-string">'하차_Sunday'</span>]) / total_Sunday
+      scaling_Weekday = (row[<span class="hljs-string">'승차_Weekday'</span>] + row[<span class="hljs-string">'하차_Weekday'</span>]) / total_Weekday
+  
+      new.at[idx, <span class="hljs-string">'환승_Saturday'</span>] = row[<span class="hljs-string">'환승_Saturday'</span>] * scaling_Saturday
+      new.at[idx, <span class="hljs-string">'환승_Sunday'</span>] = row[<span class="hljs-string">'환승_Sunday'</span>] * scaling_Sunday
+      new.at[idx, <span class="hljs-string">'환승_Weekday'</span>] = row[<span class="hljs-string">'환승_Weekday'</span>] * scaling_Weekday
+  
+new.to_csv(<span class="hljs-string">'join2.csv'</span>, index=<span class="hljs-literal">False</span>, encoding=<span class="hljs-string">'cp949'</span>)
+</div></code></pre>
+<br>
+<ol start="9">
+<li>2022년도 혼잡도 데이터 불러오기 및 처리</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-comment">#load congestion rate of year 2022</span>
+congestion = pd.read_csv(<span class="hljs-string">"서울교통공사_지하철혼잡도정보_20221231.csv"</span>, encoding=<span class="hljs-string">'cp949'</span>)
+
+congestion.head
+</div></code></pre>
+<br>
+<ol start="10">
+<li>상행선/하행선 구분명 정리 및 역명 통일</li>
+</ol>
+<pre class="hljs"><code><div>stations_to_remove = [<span class="hljs-string">'진접'</span>, <span class="hljs-string">'오남'</span>, <span class="hljs-string">'별내별가람'</span>, <span class="hljs-string">'신내'</span>]
+remove_index = congestion[congestion[<span class="hljs-string">'출발역'</span>].isin(stations_to_remove)].index
+congestion.drop(remove_index, inplace=<span class="hljs-literal">True</span>)
+congestion[<span class="hljs-string">"상하구분"</span>] = congestion[<span class="hljs-string">"상하구분"</span>].replace(<span class="hljs-string">"내선"</span>, <span class="hljs-string">"상선"</span>)
+congestion[<span class="hljs-string">"상하구분"</span>] = congestion[<span class="hljs-string">"상하구분"</span>].replace(<span class="hljs-string">"외선"</span>, <span class="hljs-string">"하선"</span>)
+congestion[<span class="hljs-string">"출발역"</span>] = congestion[<span class="hljs-string">"출발역"</span>].replace(<span class="hljs-string">"신촌(지하)"</span>, <span class="hljs-string">"신촌"</span>)
+congestion[<span class="hljs-string">"출발역"</span>] = congestion[<span class="hljs-string">"출발역"</span>].replace(<span class="hljs-string">"신천"</span>, <span class="hljs-string">"잠실새내"</span>)
+congestion[<span class="hljs-string">"출발역"</span>] = congestion[<span class="hljs-string">"출발역"</span>].replace(<span class="hljs-string">"올림픽공원(한국체대)"</span>, <span class="hljs-string">"올림픽공원"</span>)
+</div></code></pre>
+<br>
+<ol start="11">
+<li>시간대별 혼잡도 데이터 정리</li>
+</ol>
+<ul>
+<li>시간대별 혼잡도 데이터를 'hours' 배열에 맞춰 새롭게 정리하고 저장한다.</li>
+</ul>
+<pre class="hljs"><code><div>congestion1 = congestion.copy()
+time = [<span class="hljs-string">'5시30분'</span>, <span class="hljs-string">'6시00분'</span>, <span class="hljs-string">'6시30분'</span>, <span class="hljs-string">'7시00분'</span>, <span class="hljs-string">'7시30분'</span>, <span class="hljs-string">'8시00분'</span>, <span class="hljs-string">'8시30분'</span>, <span class="hljs-string">'9시00분'</span>, <span class="hljs-string">'9시30분'</span>, <span class="hljs-string">'10시00분'</span>, <span class="hljs-string">'10시30분'</span>, <span class="hljs-string">'11시00분'</span>, <span class="hljs-string">'11시30분'</span>, <span class="hljs-string">'12시00분'</span>, <span class="hljs-string">'12시30분'</span>, <span class="hljs-string">'13시00분'</span>, <span class="hljs-string">'13시30분'</span>, <span class="hljs-string">'14시00분'</span>, <span class="hljs-string">'14시30분'</span>, <span class="hljs-string">'15시00분'</span>, <span class="hljs-string">'15시30분'</span>, <span class="hljs-string">'16시00분'</span>, <span class="hljs-string">'16시30분'</span>, <span class="hljs-string">'17시00분'</span>, <span class="hljs-string">'17시30분'</span>, <span class="hljs-string">'18시00분'</span>, <span class="hljs-string">'18시30분'</span>, <span class="hljs-string">'19시00분'</span>, <span class="hljs-string">'19시30분'</span>, <span class="hljs-string">'20시00분'</span>, <span class="hljs-string">'20시30분'</span>, <span class="hljs-string">'21시00분'</span>, <span class="hljs-string">'21시30분'</span>, <span class="hljs-string">'22시00분'</span>, <span class="hljs-string">'22시30분'</span>, <span class="hljs-string">'23시00분'</span>, <span class="hljs-string">'23시30분'</span>, <span class="hljs-string">'00시00분'</span>, <span class="hljs-string">'00시30분'</span>]
+hours = [<span class="hljs-string">'06시이전'</span>, <span class="hljs-string">'06-07시간대'</span>, <span class="hljs-string">'07-08시간대'</span>, <span class="hljs-string">'08-09시간대'</span>, <span class="hljs-string">'09-10시간대'</span>, <span class="hljs-string">'10-11시간대'</span>,<span class="hljs-string">'11-12시간대'</span>, <span class="hljs-string">'12-13시간대'</span>, <span class="hljs-string">'13-14시간대'</span>, <span class="hljs-string">'14-15시간대'</span>, <span class="hljs-string">'15-16시간대'</span>, <span class="hljs-string">'16-17시간대'</span>, <span class="hljs-string">'17-18시간대'</span>, <span class="hljs-string">'18-19시간대'</span>, <span class="hljs-string">'19-20시간대'</span>, <span class="hljs-string">'20-21시간대'</span>, <span class="hljs-string">'21-22시간대'</span>, <span class="hljs-string">'22-23시간대'</span>, <span class="hljs-string">'23-24시간대'</span>, <span class="hljs-string">'24시이후'</span>]
+congestion1.drop(columns=time, inplace=<span class="hljs-literal">True</span>)
+congestion1.drop(columns=<span class="hljs-string">'연번'</span>, inplace=<span class="hljs-literal">True</span>)
+<span class="hljs-keyword">for</span> hour <span class="hljs-keyword">in</span> hours:
+  congestion1[hour] = pd.Series(dtype=<span class="hljs-string">'float64'</span>)
+<span class="hljs-keyword">for</span> idx, row <span class="hljs-keyword">in</span> congestion.iterrows():
+  congestion1.at[idx, hours[<span class="hljs-number">0</span>]] = row[time[<span class="hljs-number">0</span>]]
+  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, <span class="hljs-number">20</span>):
+    congestion1.at[idx, hours[i]] = (row[time[<span class="hljs-number">2</span>*i<span class="hljs-number">-1</span>]] + row[time[<span class="hljs-number">2</span>*i]]) / <span class="hljs-number">2</span>
+congestion1.to_csv(<span class="hljs-string">'congestion1.csv'</span>, index=<span class="hljs-literal">False</span>, encoding=<span class="hljs-string">'cp949'</span>)
+</div></code></pre>
+<br>
+<ol start="12">
+<li>혼잡도 데이터 재구성하여 저장하기</li>
+</ol>
+<ul>
+<li>'congestion1' 데이터프레임에서 요일, 호선, 역번호, 출발역, 상하구분을 기준으로 '시간대'와 '이용객수' 열을 재구성하여 새로운 데이터프레임 'congestion2'를 생성한다.
+*이 데이터를 피벗하여 상하구분과 요일구분을 기준으로 새로운 열을 생성한 후, 열 이름을 지정된 형식에 맞게 변경하고 인덱스를 재설정하여 'congestion3' 데이터프레임을 준비한다.</li>
+</ul>
+<pre class="hljs"><code><div>congestion2 = congestion1.melt(id_vars=[<span class="hljs-string">'요일구분'</span>, <span class="hljs-string">'호선'</span>, <span class="hljs-string">'역번호'</span>, <span class="hljs-string">'출발역'</span>, <span class="hljs-string">'상하구분'</span>], 
+                    var_name=<span class="hljs-string">'시간대'</span>, value_name=<span class="hljs-string">'이용객수'</span>)
+
+<span class="hljs-comment"># Pivot the DataFrame to create new columns based on direction and day type</span>
+congestion3 = congestion2.pivot_table(
+    index=[<span class="hljs-string">'호선'</span>, <span class="hljs-string">'역번호'</span>, <span class="hljs-string">'출발역'</span>, <span class="hljs-string">'시간대'</span>],
+    columns=[<span class="hljs-string">'상하구분'</span>, <span class="hljs-string">'요일구분'</span>],
+    values=<span class="hljs-string">'이용객수'</span>
+)
+
+<span class="hljs-comment"># Rename columns to match the specified format</span>
+congestion3.columns = [<span class="hljs-string">'_'</span>.join(col).strip() <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> congestion3.columns.values]
+congestion3 = congestion3.reset_index()
+</div></code></pre>
+<ul>
+<li>'congestion3' 데이터프레임의 결측치를 0으로 채우고, 열 이름을 알아보기 쉽게 변경한다. '역번호'열은 삭제하고, 'conjestion3'데이터프레임과 'station_number'데이터프레임을 '호선'과 '역명'을 기준으로 inner join하여 합친다.</li>
+</ul>
+<pre class="hljs"><code><div>congestion3 = congestion3.fillna(<span class="hljs-number">0</span>)
+congestion3.rename(columns = {<span class="hljs-string">'출발역'</span> : <span class="hljs-string">'역명'</span>, <span class="hljs-string">'시간대'</span> : <span class="hljs-string">'hour'</span>, <span class="hljs-string">'상선_공휴일'</span> : <span class="hljs-string">'상선_Sunday'</span>, <span class="hljs-string">'상선_토요일'</span>: <span class="hljs-string">'상선_Saturday'</span>, <span class="hljs-string">'상선_평일'</span> : <span class="hljs-string">'상선_Weekday'</span>, <span class="hljs-string">'하선_공휴일'</span> : <span class="hljs-string">'하선_Sunday'</span>, <span class="hljs-string">'하선_토요일'</span>: <span class="hljs-string">'하선_Saturday'</span>, <span class="hljs-string">'하선_평일'</span> : <span class="hljs-string">'하선_Weekday'</span>}, inplace = <span class="hljs-literal">True</span>)
+congestion3.drop(columns=<span class="hljs-string">'역번호'</span>, inplace=<span class="hljs-literal">True</span>)
+congestion3 = pd.merge(congestion3, station_number, how=<span class="hljs-string">'inner'</span>, on=[<span class="hljs-string">'호선'</span>,<span class="hljs-string">'역명'</span>])
+
+congestion3.to_csv(<span class="hljs-string">'congestion3.csv'</span>, index=<span class="hljs-literal">False</span>, encoding=<span class="hljs-string">'cp949'</span>)
+</div></code></pre>
+<br>
+<ol start="13">
+<li>최종 데이터셋 준비하기</li>
+</ol>
+<ul>
+<li>데이터프레임을 '호선', '역명', 'hour', '역번호' 열을 기준으로 조인한 후, 필요한 열을 선택하여 최종 데이터셋을 만들고, 이를 '2022_final.csv'라는 파일로 저장한다.</li>
+</ul>
+<pre class="hljs"><code><div>  final = pd.merge(new, congestion3, how=<span class="hljs-string">'inner'</span>, on=[<span class="hljs-string">'호선'</span>, <span class="hljs-string">'역명'</span>, <span class="hljs-string">'hour'</span>, <span class="hljs-string">'역번호'</span>])
+  col = [<span class="hljs-string">'호선'</span>, <span class="hljs-string">'역번호'</span>, <span class="hljs-string">'역명'</span>, <span class="hljs-string">'hour'</span>, <span class="hljs-string">'승차_Weekday'</span>, <span class="hljs-string">'승차_Saturday'</span>, <span class="hljs-string">'승차_Sunday'</span>, <span class="hljs-string">'하차_Weekday'</span>, <span class="hljs-string">'하차_Saturday'</span>, <span class="hljs-string">'하차_Sunday'</span>, <span class="hljs-string">'환승_Weekday'</span>, <span class="hljs-string">'환승_Saturday'</span>, <span class="hljs-string">'환승_Sunday'</span>, <span class="hljs-string">'interval_Weekday'</span>, <span class="hljs-string">'interval_Saturday'</span>, <span class="hljs-string">'interval_Sunday'</span>, <span class="hljs-string">'capacity'</span>, <span class="hljs-string">'상선_Weekday'</span>, <span class="hljs-string">'상선_Saturday'</span>, <span class="hljs-string">'상선_Sunday'</span>, <span class="hljs-string">'하선_Weekday'</span>, <span class="hljs-string">'하선_Saturday'</span>, <span class="hljs-string">'하선_Sunday'</span>]
+  final = final[col]
+  final.to_csv(<span class="hljs-string">'2022_final.csv'</span>, index=<span class="hljs-literal">False</span>, encoding=<span class="hljs-string">'cp949'</span>)
+</div></code></pre>
+<br>
+<h3 id="%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%8B%9C%EA%B0%81%ED%99%94">데이터 시각화</h3>
+<ol>
+<li>각 요일의(평일, 토요일, 일요일) 시간대별 승차 인원 및 상/하선 혼잡도</li>
+</ol>
+<ul>
+<li>
+<p>평일 시간대별 승차 및 하차인원과 상선 및 하선 혼잡도 비교 (예 : 1호선, 청량리역)</p>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/24e5e20e-9a50-4b65-b80c-0a923fa67fd5" alt="image"> <br></p>
+<ul>
+<li>출근 시간대인 7-8시간대에 승/하차 인원과 하선 혼잡도가 증가하는 것을 확인할 수 있다.</li>
+<li>퇴근 시간대인 18-19시간대에 승/하차 인원과 상선 혼잡도가 증가하는 것을 확인할 수 있다.</li>
+</ul>
+</li>
+<li>
+<p>주말 시간대별 승차 인원 및 상/하선 혼잡도(예: 1호선, 청량리역)</p>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/f55ddd07-57e8-4532-9c5e-fe83e222ede3" alt="image"> <br></p>
+<ul>
+<li>주말에는 오후 시간대에 승/하차 인원이 증가함에 따라 11시간대에 하선 혼잡도가 증가하며, 16시간대에 상선 혼잡도가 증가하는 것을 확인 할 수 있다.</li>
+</ul>
+</li>
+<li>
+<p>역별 승하차 인원, 역별 상/하선 혼잡도 (예: 1호선, 평일, 07-08 시간대)</p>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/fcd2fe7a-cb53-44b8-8efd-d1d0f6ab382d" alt="image"> <br></p>
+<ul>
+<li>평일 혼잡도가 높은 시간대인 7-8시간대에 역별 승/하차 인원과 혼잡도를 비교하였다. 그래프를 통해 청량리역에서 승차한 뒤, 목적지인 서울역에서 내리는 사람이 많을 것으로 추정하였다. <br>
+따라서 동묘앞역이나, 동대문역에서는 승하차 인원은 적지만 혼잡도가 높게 유지되는 것을 알 수 있고, 최종 도착지인 서울역에서 승/하차 인원이 높은 것에 비해 혼잡도가 감소하는 것을 확인할 수 있다. <br>
+즉, 승/하차 인원과 혼잡도는 직접적인 관계를 찾을 수 없지만, 이전 역에서 승/하차 인원이 많다면 내부 혼잡도가 증가한 채로 유지한다고 생각할 수 있다. <br>
+따라서, 선형적인 회귀 방법보다는 LSTM을 이용하여 시간대별 데이터를 전체적으로 입력받아 혼잡도를 유추해 보았다.</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>각 요일의(평일, 토요일, 일요일) 시간대별 배차간격 및 혼잡도</li>
+</ol>
+<ul>
+<li>
+<p>평일 시간대별 배차간격 및 혼잡도(예: 1호선, 청량리역)</p>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/e344f1de-aa4a-4ed9-9a8c-2b4246914b81" alt="image">  <br></p>
+<ul>
+<li>평일 출퇴근 시간대인 7-8시간대, 8-9시간대, 18-19시간대, 19-20시간대에 배차간격이 짧으며, 자주 배차됨에도 불구하고 혼잡도가 높게 나타났다.</li>
+<li>출근 시간대인 7-8시간대, 8-9시간대에는 주거지역이 다수 분포하는 청량리역에서 업무지역이 다수 분포하는 서울역으로 가는 방향인 하선의 혼잡도가 높게 나타났다.</li>
+<li>반대로 퇴근 시간대인 18-19 시간대, 19-20 시간대에는 반대의 이유로 상선의 혼잡도가 높게 나타났다.</li>
+</ul>
+</li>
+<li>
+<p>주말 시간대별 배차간격 및 혼잡도(예: 1호선, 청량리역)</p>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/30d99185-c828-44d8-bc93-3ab4bb68023c" alt="image"> <br></p>
+<ul>
+<li>주말에는 전동차 배차간격이 5분으로 일정했으며, 평일에 비해 혼잡도의 변화가 크지 않았다. 다만, 심야시간대인 22-23시간대, 23-24시간대, 24시 이후 시간대에 혼잡도가 급격히 감소하는 것을 알 수 있다.</li>
+</ul>
+</li>
+</ul>
+<br>
+<h2 id="iii-methodology">III. Methodology</h2>
+<h3 id="long-short-term-memory-lstm">Long Short Term Memory (LSTM)</h3>
+<p>LSTM(Long Short Term Memory) 모델은 기존 RNN(Recurrent Neural Network)의 기울기 소실 문제를 해결하기 위해 개발되었다. LSTM은 RNN의 기본 구조에 셀 상태(Cell state)와 세 가지 게이트를 추가한 구조를 가지고 있다. 이 세 가지 게이트는 Forget Gate, Input Gate, Output Gate로 구성된다.</p>
+<br>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/47e8106c-67c0-4efe-ad88-63dad6de2380" alt="image"></p>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/214e0a58-2108-4ea6-989b-59a44e16f966" alt="image"></p>
+<br>
+<p>세 가지 게이트는 다음과 같은 역할을 한다:</p>
+<ul>
+<li><strong>Forget Gate (망각 게이트):</strong> 과거의 불필요한 정보를 잊도록 결정</li>
+<li><strong>Input Gate (입력 게이트):</strong> 현재의 정보를 기억하도록 결정</li>
+<li><strong>Output Gate (출력 게이트):</strong> 어떤 정보를 출력할지 결정</li>
+</ul>
+<p>LSTM 네트워크는 셀 상태와 은닉 상태를 통해 다음과 같은 방식으로 정보를 업데이트한다:</p>
+<ol>
+<li><strong>셀 상태(Cell State):</strong> 긴 시간 동안 정보를 유지하는 역할을 하며, 많은 시점에 걸쳐 정보를 전달</li>
+<li><strong>은닉 상태(Hidden State):</strong> 단기적인 정보를 제공하며, 현재 입력과 셀 상태를 기반으로 매 시점마다 업데이트</li>
+</ol>
+<p>LSTM의 업데이트 과정은 다음과 같다:</p>
+<ul>
+<li><strong>망각 게이트(Forget Gate):</strong> 망각 게이트는 셀 상태에서 어떤 정보를 버릴지 결정
+<img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/496e8b6c-95e3-40f4-b7bf-419dc1e9fafa" alt="image"></li>
+</ul>
+<br>
+<ul>
+<li><strong>입력 게이트(Input Gate):</strong> 입력 게이트는 현재 입력에서 어떤 정보를 셀 상태에 추가할지 결정
+<img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/85b512dd-97d8-44c0-b055-a5cf85437a43" alt="image"></li>
+</ul>
+<br>
+<ul>
+<li>
+<p><strong>셀 상태 업데이트(Cell State Update):</strong> 셀 상태는 망각 게이트로 조절된 이전 셀 상태와 입력 게이트로 조절된 새로운 후보 값을 결합하여 업데이트
+<img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/4561cfa7-73c6-4cbb-b3bc-f83551f09031" alt="image"></p>
+<br>
+</li>
+<li>
+<p><strong>출력 게이트(Output Gate):</strong> 출력 게이트는 셀 상태에 tanh 활성화를 적용하고, 이를 출력 게이트로 조절하여 은닉 상태를 결정
+<img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/21199fca-2808-4726-a2af-0ed6dd4d9b41" alt="image"></p>
+</li>
+</ul>
+<br>
+<p>마지막으로, 시점 <em>T</em> 에서의 예측값은 다음과 같이 계산된다:
+<br></p>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/44382d50-a8b3-47c0-8729-4764c38d8c37" alt="image"></p>
+<br>
+<p>이와 같은 게이트 구조를 통해 LSTM은 긴 시퀀스에서도 중요한 정보를 효과적으로 유지하고 불필요한 정보를 제거할 수 있다. 또, 셀 상태를 통해 종종 긴 시간에 걸친 패턴과 추세를 포함하는 시계열 데이터를 학습하고 유지할 수 있다.
+<br></p>
+<p>따라서 LSTM이 시퀀스 데이터를 다루는 작업에 매우 적합하다고 생각했고, 지하철역이 순차적으로 존재하는 것을 시계열로 해석할 수 있다고 보아, 예측 모델로 LSTM을 선정하였다.</p>
+<h2 id="iv-evaluation--analysis">IV. Evaluation &amp; Analysis</h2>
+<ol>
+<li>필요한 라이브러리 가져오기 및 GPU/CPU 디바이스 설정</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">if</span> torch.cuda.is_available():
+    device = <span class="hljs-string">"cuda"</span>
+<span class="hljs-keyword">elif</span> torch.backends.mps.is_available():
+    device = <span class="hljs-string">"mps"</span>
+<span class="hljs-keyword">else</span>:
+    device = <span class="hljs-string">"cpu"</span>
+print(device)
+<span class="hljs-comment">#check gpu device (if using gpu)</span>
+print(torch.cuda.get_device_name(<span class="hljs-number">0</span>))
+</div></code></pre>
+<br>
+<ol start="2">
+<li>역번호가 199보다 작거나 1000보다 큰 역의 데이터를 제거하여 데이터프레임 재구성</li>
+</ol>
+<ul>
+<li>역 개수가 많지 않아 학습 데이터로 사용하기 힘든 서울 지하철 1호선(서울역-청량리역) 구간 및 2호선 신정지선, 성수지선을 제외한다. 또 분기가 있는 5호선 강동역 동쪽 구간도 제외하고, 방화-강동 구간의 데이터만을 이용한다.</li>
+</ul>
+<pre class="hljs"><code><div>df = pd.read_csv(<span class="hljs-string">"2022_final.csv"</span>, encoding=<span class="hljs-string">'cp949'</span>)
+stations_to_remove = df[(df[<span class="hljs-string">'역번호'</span>] &gt; <span class="hljs-number">1000</span>) | (df[<span class="hljs-string">'역번호'</span>] &lt; <span class="hljs-number">199</span>)].index
+df.drop(stations_to_remove, inplace=<span class="hljs-literal">True</span>)
+</div></code></pre>
+<br>
+<ol start="3">
+<li>MinMaxScaler 이용하여 데이터 스케일링하기</li>
+</ol>
+<ul>
+<li>MinMaxScaler import 및 각각의 스케일러 만들기
+<ul>
+<li>데이터 예측 시 특정 feature에 과도하게 영향을 받지 않기 위해 정규화 작업 실행</li>
+<li>각 target feature에 대해 MinMaxScaler 만들어 최솟값 0, 최댓값 1로 설정</li>
+<li>예측 이후 다시 기존 값으로 변환하기 용이하게 각각 scaler를 만들었음</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> MinMaxScaler
+
+feature_scaler = MinMaxScaler(feature_range=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+up_weekday_scaler = MinMaxScaler(feature_range=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+up_saturday_scaler = MinMaxScaler(feature_range=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+up_sunday_scaler = MinMaxScaler(feature_range=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+down_weekday_scaler = MinMaxScaler(feature_range=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+down_saturday_scaler = MinMaxScaler(feature_range=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+down_sunday_scaler = MinMaxScaler(feature_range=(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+</div></code></pre>
+<ul>
+<li>평일, 토요일, 일요일 상/하선 데이터들을 각각의 스케일러를 사용하여 스케일링하고 csv파일로 저장하기</li>
+<li>List of Features :
+<ul>
+<li>승차_Weekday/Saturday/Sunday: 각 요일(평일, 토요일, 일요일)의 해당 노선, 해당 역, 해당 시간대에 승차한 인원을 나타낸다.</li>
+<li>하차_Weekday/Saturday/Sunday: 각 요일의 해당 노선, 해당 역, 해당 시간대에 하차한 인원을 나타낸다.</li>
+<li>환승_Weekday/Saturday/Sunday: 각 요일의 해당 노선, 해당 역, 해당 시간대의 환승 인원 수를 나타낸다.</li>
+<li>interval_Weekday/Saturday/Sunday: 각 요일, 시간대별 배차 간격을 나타낸다.</li>
+<li>capacity: 전동차 한 편성의 수용 인원을 나타낸다. (참고: 1-4호선은 10량 1편성, 5-7호선은 8량 1편성, 8호선은 6량 1편성)</li>
+<li>progression: 각 노선의 기/종점에 가까워질수록 한쪽 방향의 승객 수가 더 많다. 각 노선 끝부분의 예측 정확도를 위해 새롭게 만든 feature이다. 열차가 기점에서 종점까지 운행할 때 어느 정도 운행했는지를 나타내는 수치이다.</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div>features = [<span class="hljs-string">'승차_Weekday'</span>, <span class="hljs-string">'승차_Saturday'</span>, <span class="hljs-string">'승차_Sunday'</span>, <span class="hljs-string">'하차_Weekday'</span>, <span class="hljs-string">'하차_Saturday'</span>, <span class="hljs-string">'하차_Sunday'</span>, <span class="hljs-string">'환승_Weekday'</span>, <span class="hljs-string">'환승_Saturday'</span>, <span class="hljs-string">'환승_Sunday'</span>, <span class="hljs-string">'interval_Weekday'</span>, <span class="hljs-string">'interval_Saturday'</span>, <span class="hljs-string">'interval_Sunday'</span>, <span class="hljs-string">'capacity'</span>]
+
+df[features] = feature_scaler.fit_transform(df[features])
+df[<span class="hljs-string">'상선_Weekday'</span>] = up_weekday_scaler.fit_transform(df[<span class="hljs-string">'상선_Weekday'</span>].to_frame())
+df[<span class="hljs-string">'상선_Saturday'</span>] = up_saturday_scaler.fit_transform(df[<span class="hljs-string">'상선_Saturday'</span>].to_frame())
+df[<span class="hljs-string">'상선_Sunday'</span>] = up_sunday_scaler.fit_transform(df[<span class="hljs-string">'상선_Sunday'</span>].to_frame())
+df[<span class="hljs-string">'하선_Weekday'</span>] = down_weekday_scaler.fit_transform(df[<span class="hljs-string">'하선_Weekday'</span>].to_frame())
+df[<span class="hljs-string">'하선_Saturday'</span>] = down_saturday_scaler.fit_transform(df[<span class="hljs-string">'하선_Saturday'</span>].to_frame())
+df[<span class="hljs-string">'하선_Sunday'</span>] = down_sunday_scaler.fit_transform(df[<span class="hljs-string">'하선_Sunday'</span>].to_frame())
+
+df.to_csv(<span class="hljs-string">'2022_scaled.csv'</span>, index=<span class="hljs-literal">False</span>, encoding=<span class="hljs-string">'cp949'</span>)
+</div></code></pre>
+<ul>
+<li>데이터프레임에 'progression'열 생성 및 각 리스트 정의하기(평일)</li>
+</ul>
+<pre class="hljs"><code><div>df[<span class="hljs-string">'progression'</span>] = [<span class="hljs-number">0.0</span>] * len(df)
+weekday_up = [<span class="hljs-string">'역번호'</span>, <span class="hljs-string">'승차_Weekday'</span>, <span class="hljs-string">'하차_Weekday'</span>, <span class="hljs-string">'환승_Weekday'</span>, <span class="hljs-string">'interval_Weekday'</span>, <span class="hljs-string">'capacity'</span>, <span class="hljs-string">'progression'</span>, <span class="hljs-string">'상선_Weekday'</span>]
+weekday_down = [<span class="hljs-string">'역번호'</span>, <span class="hljs-string">'승차_Weekday'</span>, <span class="hljs-string">'하차_Weekday'</span>, <span class="hljs-string">'환승_Weekday'</span>, <span class="hljs-string">'interval_Weekday'</span>, <span class="hljs-string">'capacity'</span>, <span class="hljs-string">'progression'</span>, <span class="hljs-string">'하선_Weekday'</span>]
+weekday_up2 = [<span class="hljs-string">'승차_Weekday'</span>, <span class="hljs-string">'하차_Weekday'</span>, <span class="hljs-string">'환승_Weekday'</span>, <span class="hljs-string">'interval_Weekday'</span>, <span class="hljs-string">'capacity'</span>, <span class="hljs-string">'progression'</span>, <span class="hljs-string">'상선_Weekday'</span>]
+weekday_down2 = [<span class="hljs-string">'승차_Weekday'</span>, <span class="hljs-string">'하차_Weekday'</span>, <span class="hljs-string">'환승_Weekday'</span>, <span class="hljs-string">'interval_Weekday'</span>, <span class="hljs-string">'capacity'</span>, <span class="hljs-string">'progression'</span>, <span class="hljs-string">'하선_Weekday'</span>]
+hours = [<span class="hljs-string">'06-07시간대'</span>, <span class="hljs-string">'07-08시간대'</span>, <span class="hljs-string">'08-09시간대'</span>, <span class="hljs-string">'09-10시간대'</span>, <span class="hljs-string">'10-11시간대'</span>, <span class="hljs-string">'11-12시간대'</span>, <span class="hljs-string">'12-13시간대'</span>, <span class="hljs-string">'13-14시간대'</span>, <span class="hljs-string">'14-15시간대'</span>, <span class="hljs-string">'15-16시간대'</span>, <span class="hljs-string">'16-17시간대'</span>, <span class="hljs-string">'17-18시간대'</span>, <span class="hljs-string">'18-19시간대'</span>, <span class="hljs-string">'19-20시간대'</span>, <span class="hljs-string">'20-21시간대'</span>, <span class="hljs-string">'21-22시간대'</span>, <span class="hljs-string">'22-23시간대'</span>, <span class="hljs-string">'23-24시간대'</span>]
+</div></code></pre>
+<ul>
+<li>각 노선의 평일 상/하행 데이터를 시간대별로 분리하여 정리한 후, 해당 데이터를 csv파일로 저장한다.</li>
+<li>2호선의 경우 순환열차이기 때문에 progression 값을 0.5로 설정하고 이외의 노선은 역번호와 시작 번호를 기반으로 progression 값을 계산한다.</li>
+<li>각 csv 파일은 “노선_시간대_상선/하선” 형식의 파일명을 가지며, 각 row는 특정 역의 feature들을 가지고 있다. 역의 배열 순서는 상선 데이터일 경우 역번호 내림차순, 하선 데이터일 경우 역번호 오름차순이며 각 csv 파일이 노선 운행 기점부터 종점까지의 하나의 시계열이 된다. 이렇게 추출한 많은 시계열 데이터를 토대로 학습을 진행한다.</li>
+</ul>
+<pre class="hljs"><code><div>start = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">9</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>]
+end = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">52</span>, <span class="hljs-number">34</span>, <span class="hljs-number">48</span>, <span class="hljs-number">47</span>, <span class="hljs-number">50</span>, <span class="hljs-number">27</span>]
+num_stations = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">43</span>, <span class="hljs-number">44</span>, <span class="hljs-number">51</span>, <span class="hljs-number">56</span>, <span class="hljs-number">39</span>, <span class="hljs-number">53</span>, <span class="hljs-number">18</span>]
+
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>,<span class="hljs-number">9</span>):
+    <span class="hljs-keyword">for</span> period <span class="hljs-keyword">in</span> hours:
+        tmp = df.loc[df[<span class="hljs-string">'호선'</span>] == line]
+        tmp = tmp[weekday_up]
+        tmp2 = tmp.loc[df[<span class="hljs-string">'hour'</span>] == period]
+        tmp2 = tmp2.sort_values(by=<span class="hljs-string">'역번호'</span>, axis=<span class="hljs-number">0</span>, ascending=<span class="hljs-literal">False</span>, inplace=<span class="hljs-literal">False</span>)
+        <span class="hljs-keyword">if</span> (line == <span class="hljs-number">2</span>):
+            tmp2[<span class="hljs-string">'progression'</span>] = [<span class="hljs-number">0.5</span>] * len(tmp2)
+        <span class="hljs-keyword">else</span>:
+            tmp2[<span class="hljs-string">'progression'</span>] = (num_stations[line] - (tmp2[<span class="hljs-string">'역번호'</span>] - line * <span class="hljs-number">100</span> - start[line])) / num_stations[line]
+        tmp3 = tmp2[weekday_up2]
+        pd.DataFrame(tmp3).to_csv(<span class="hljs-string">f'weekday_split\\<span class="hljs-subst">{line}</span>_<span class="hljs-subst">{period}</span>_up.csv'</span>, index=<span class="hljs-literal">False</span>, encoding=<span class="hljs-string">'cp949'</span>)
+
+    <span class="hljs-keyword">for</span> period <span class="hljs-keyword">in</span> hours:
+        tmp = df.loc[df[<span class="hljs-string">'호선'</span>] == line]
+        tmp = tmp[weekday_down]
+        tmp2 = tmp.loc[df[<span class="hljs-string">'hour'</span>] == period]
+        tmp2 = tmp2.sort_values(by=<span class="hljs-string">'역번호'</span>, axis=<span class="hljs-number">0</span>, ascending=<span class="hljs-literal">True</span>, inplace=<span class="hljs-literal">False</span>)
+        <span class="hljs-keyword">if</span> (line == <span class="hljs-number">2</span>):
+            tmp2[<span class="hljs-string">'progression'</span>] = [<span class="hljs-number">0.5</span>] * len(tmp2)
+        <span class="hljs-keyword">else</span>:
+            tmp2[<span class="hljs-string">'progression'</span>] = (tmp2[<span class="hljs-string">'역번호'</span>] - line * <span class="hljs-number">100</span> - start[line]) / num_stations[line]
+        tmp3 = tmp2[weekday_down2]
+        pd.DataFrame(tmp3).to_csv(<span class="hljs-string">f'weekday_split\\<span class="hljs-subst">{line}</span>_<span class="hljs-subst">{period}</span>_down.csv'</span>, index=<span class="hljs-literal">False</span>, encoding=<span class="hljs-string">'cp949'</span>)
+</div></code></pre>
+<ul>
+<li>토요일, 일요일의 데이터도 위의 코드와 마찬가지로 처리한다.</li>
+</ul>
+<br>
+<ol start="4">
+<li>모델 학습에 사용할 수 있도록 데이터셋 준비하기</li>
+</ol>
+<ul>
+<li>데이터를 저장할 리스트를 생성하고 시계열 길이를 8로 설정하기.</li>
+<li>각 디렉토리 내의 csv파일을 읽고, 데이터를 PyTorch 텐서로 변환하기</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> Dataset, DataLoader
+
+<span class="hljs-comment"># Assume your time series data is already preprocessed and in the format of PyTorch tensors</span>
+<span class="hljs-comment"># Each time series is a 2D tensor of shape (sequence_length, num_features)</span>
+
+<span class="hljs-comment"># Training data (multiple time series)</span>
+<span class="hljs-keyword">import</span> os
+<span class="hljs-comment"># assign directory</span>
+directories = [<span class="hljs-string">'weekday_split'</span>, <span class="hljs-string">'saturday_split'</span>, <span class="hljs-string">'sunday_split'</span>]
+time_series_list = []
+X = []
+y = []
+time_steps = <span class="hljs-number">8</span>
+
+<span class="hljs-keyword">for</span> directory <span class="hljs-keyword">in</span> directories:
+    <span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> os.listdir(directory):
+        f = os.path.join(directory, filename)
+        <span class="hljs-keyword">if</span> os.path.isfile(f):
+            tmp = pd.read_csv(f, encoding=<span class="hljs-string">'cp949'</span>)
+            tmp = tmp.astype(float)
+            tens = torch.from_numpy(tmp.values)
+            time_series_list.append(tens)
+</div></code></pre>
+<ul>
+<li>각 시계열 데이터를 슬라이딩 윈도우 방식으로 나눠 입력 시퀀스 'x'와 타겟 값 'y' 생성하기</li>
+<li>타겟 값 'y'를 배열 형식으로 변환하고, 'x'와 'y'를 PyTorch 텐서로 변환하고 데이터 형식을 'float32'로 설정하기</li>
+<li>데이터 형태 확인</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> ts <span class="hljs-keyword">in</span> time_series_list:
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(ts) - time_steps):
+        X.append(ts[i:i + time_steps])
+        y.append(ts[i + time_steps, <span class="hljs-number">-1</span>])  <span class="hljs-comment"># Assuming the last feature is the target</span>
+
+y = np.array(y)
+<span class="hljs-comment"># Convert to PyTorch tensors</span>
+X = torch.stack(X, dim=<span class="hljs-number">0</span>)
+X = torch.tensor(X, dtype=torch.float32)
+y = torch.tensor(y, dtype=torch.float32)
+print(X.size())
+print(y.size())
+</div></code></pre>
+<ul>
+<li>'Dataset' class를 상속하여 'TimeSeriesDataset' 클래스 정의하기</li>
+<li>'x'와 'y' 데이터를 사용하여 'TimeSeriesDataset' 인스턴스 생성</li>
+<li>전체 데이터셋을 학습용 데이터셋(80%)과 검증용 데이터셋(20%)으로 분할하기</li>
+<li>학습용, 검증용 데이터셋을 위한 데이터 로더 생성</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TimeSeriesDataset</span><span class="hljs-params">(Dataset)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, X, y)</span>:</span>
+        self.X = X
+        self.y = y
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__len__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> len(self.X)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__getitem__</span><span class="hljs-params">(self, idx)</span>:</span>
+        <span class="hljs-keyword">return</span> self.X[idx], self.y[idx].unsqueeze(<span class="hljs-number">-1</span>)
+
+dataset = TimeSeriesDataset(X, y)
+
+<span class="hljs-comment"># Split the dataset into training and validation sets</span>
+train_size = int(<span class="hljs-number">0.8</span> * len(dataset))  <span class="hljs-comment"># 80% of the data for training</span>
+val_size = len(dataset) - train_size  <span class="hljs-comment"># Remaining 20% for validation</span>
+
+train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
+
+train_loader = DataLoader(train_dataset, batch_size=<span class="hljs-number">32</span>, shuffle=<span class="hljs-literal">True</span>)
+val_loader = DataLoader(val_dataset, batch_size=<span class="hljs-number">32</span>, shuffle=<span class="hljs-literal">False</span>)
+</div></code></pre>
+<br>
+<ol start="5">
+<li>LSTM 모델 정의하고, cost function과 최적화 알고리즘 설정하기</li>
+</ol>
+<ul>
+<li>'nn.Module' 상속하여 'LSTMModel' 클래스 정의하기</li>
+<li>cost function으로는 Mean-Squared-Error 사용</li>
+<li>최적화 알고리즘으로 Adam optimizer 사용하며, learning rate는 0.001로 설정</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.optim <span class="hljs-keyword">as</span> optim
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LSTMModel</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_size, hidden_size, num_layers, output_size)</span>:</span>
+        super(LSTMModel, self).__init__()
+        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=<span class="hljs-literal">True</span>)
+        self.fc = nn.Linear(hidden_size, output_size)
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
+        h_0 = torch.zeros(num_layers, x.size(<span class="hljs-number">0</span>), hidden_size).to(x.device)
+        c_0 = torch.zeros(num_layers, x.size(<span class="hljs-number">0</span>), hidden_size).to(x.device)
+        
+        out, _ = self.lstm(x, (h_0, c_0))
+        out = self.fc(out[:, <span class="hljs-number">-1</span>, :])
+        <span class="hljs-keyword">return</span> out
+
+input_size = X.shape[<span class="hljs-number">2</span>]  <span class="hljs-comment"># Number of features in the input data</span>
+hidden_size = <span class="hljs-number">60</span>        <span class="hljs-comment"># Number of features in the hidden state</span>
+num_layers = <span class="hljs-number">4</span>        <span class="hljs-comment"># Number of stacked LSTM layers</span>
+output_size = <span class="hljs-number">1</span>          <span class="hljs-comment"># Number of output features (1 target feature)</span>
+
+model = LSTMModel(input_size, hidden_size, num_layers, output_size).to(device)
+criterion = nn.MSELoss()
+optimizer = optim.Adam(model.parameters(), lr=<span class="hljs-number">0.001</span>)
+</div></code></pre>
+<br>
+<ol start="6">
+<li>데이터 학습 및 검증 절차 수행하기</li>
+</ol>
+<ul>
+<li>학습 epoch 수는 70으로 설정</li>
+<li>각 epoch마다 학습과 검증을 반복함</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment"># Training loop</span>
+num_epochs = <span class="hljs-number">70</span>
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> range(num_epochs):
+    model.train()
+    <span class="hljs-keyword">for</span> inputs, targets <span class="hljs-keyword">in</span> train_loader:
+        inputs, targets = inputs.to(device), targets.to(device)
+        
+        outputs = model(inputs)
+        loss = criterion(outputs, targets)
+        
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+    
+    <span class="hljs-comment"># Validation</span>
+    model.eval()
+    val_loss = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">with</span> torch.no_grad():
+        <span class="hljs-keyword">for</span> inputs, targets <span class="hljs-keyword">in</span> val_loader:
+            inputs, targets = inputs.to(device), targets.to(device)
+            outputs = model(inputs)
+            val_loss += criterion(outputs, targets).item()
+    
+    val_loss /= len(val_loader)
+    print(<span class="hljs-string">f'Epoch [<span class="hljs-subst">{epoch+<span class="hljs-number">1</span>}</span>/<span class="hljs-subst">{num_epochs}</span>], Loss: <span class="hljs-subst">{loss.item():<span class="hljs-number">.4</span>f}</span>, Val Loss: <span class="hljs-subst">{val_loss:<span class="hljs-number">.4</span>f}</span>'</span>)
+</div></code></pre>
+<pre class="hljs"><code><div>Epoch [1/70], Loss: 0.0024, Val Loss: 0.0025
+Epoch [2/70], Loss: 0.0106, Val Loss: 0.0023
+Epoch [3/70], Loss: 0.0009, Val Loss: 0.0023
+Epoch [4/70], Loss: 0.0021, Val Loss: 0.0020
+Epoch [5/70], Loss: 0.0026, Val Loss: 0.0020
+Epoch [6/70], Loss: 0.0017, Val Loss: 0.0019
+Epoch [7/70], Loss: 0.0021, Val Loss: 0.0025
+Epoch [8/70], Loss: 0.0026, Val Loss: 0.0021
+Epoch [9/70], Loss: 0.0021, Val Loss: 0.0022
+Epoch [10/70], Loss: 0.0014, Val Loss: 0.0019
+Epoch [11/70], Loss: 0.0011, Val Loss: 0.0020
+Epoch [12/70], Loss: 0.0016, Val Loss: 0.0017
+Epoch [13/70], Loss: 0.0012, Val Loss: 0.0018
+Epoch [14/70], Loss: 0.0027, Val Loss: 0.0022
+Epoch [15/70], Loss: 0.0023, Val Loss: 0.0017
+&lt;중략&gt;
+Epoch [60/70], Loss: 0.0005, Val Loss: 0.0008
+Epoch [61/70], Loss: 0.0006, Val Loss: 0.0008
+Epoch [62/70], Loss: 0.0004, Val Loss: 0.0009
+Epoch [63/70], Loss: 0.0004, Val Loss: 0.0008
+Epoch [64/70], Loss: 0.0004, Val Loss: 0.0008
+Epoch [65/70], Loss: 0.0002, Val Loss: 0.0008
+Epoch [66/70], Loss: 0.0004, Val Loss: 0.0008
+Epoch [67/70], Loss: 0.0004, Val Loss: 0.0008
+Epoch [68/70], Loss: 0.0004, Val Loss: 0.0008
+Epoch [69/70], Loss: 0.0008, Val Loss: 0.0008
+Epoch [70/70], Loss: 0.0005, Val Loss: 0.0008
+</div></code></pre>
+<ul>
+<li>결과값을 보면, 학습 과정에서 모델이 안정적으로 개선되고 있으며 최종 epoch에서 Loss: 0.0005, Val Loss: 0.0008로 검증데이터에서도 손실값이 낮게 나왔다. 이는 모델이 과적합되지 않고 일반화 성능도 높게 나타난다고 볼 수 있다.</li>
+</ul>
+<br>
+<ol start="7">
+<li>모델 사용하여 예측 수행하기</li>
+</ol>
+<ul>
+<li>test를 위해 새로운 시계열 데이터를 사용하여 LSTM 모델로 예측을 수행하고, 예측된 값과 실제 값 출력하기</li>
+</ul>
+<pre class="hljs"><code><div>scaled_new_ts = pd.read_csv(<span class="hljs-string">"4_20-21시간대_up.csv"</span>, encoding=<span class="hljs-string">'cp949'</span>)
+scaled_new_ts = scaled_new_ts.to_numpy()
+print(scaled_new_ts.shape)
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># New time series for testing</span>
+actual = scaled_new_ts[:, <span class="hljs-number">-1</span>].copy()
+scaled_new_ts[time_steps:, <span class="hljs-number">-1</span>] = <span class="hljs-number">0.0</span>
+X_test = scaled_new_ts.copy()
+<span class="hljs-comment"># Initialize the placeholder for predictions</span>
+predictions = []
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># Make predictions</span>
+model.eval()
+<span class="hljs-keyword">with</span> torch.no_grad():
+    <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(time_steps, X_test.shape[<span class="hljs-number">0</span>]+<span class="hljs-number">1</span>):
+        <span class="hljs-comment"># Prepare the input for the model</span>
+        X_input = X_test[t-time_steps:t, :]  <span class="hljs-comment"># Inputs up to the current time step</span>
+        X_input = [X_input]
+        
+        <span class="hljs-comment"># Convert to tensor</span>
+        X_input_tensor = torch.tensor(X_input, dtype=torch.float32).to(device)
+        
+        <span class="hljs-comment"># Predict the target feature</span>
+        y_pred = model(X_input_tensor)
+        pred_value = y_pred.cpu().numpy()[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]
+        <span class="hljs-comment"># Update the placeholder with the predictions</span>
+        predictions.append(pred_value)
+        
+        <span class="hljs-comment"># Update the input with the predicted target feature for the next step</span>
+        <span class="hljs-keyword">if</span> (t != X_test.shape[<span class="hljs-number">0</span>]):
+            X_test[t, <span class="hljs-number">-1</span>] = pred_value
+        
+predicted = predictions
+actual = actual[time_steps:]
+<span class="hljs-comment">#predicted = np.reshape(predicted, (-1,1))</span>
+<span class="hljs-comment">#predicted = down_saturday_scaler.inverse_transform(predicted)  #switch scaler as needed</span>
+<span class="hljs-comment">#actual = np.reshape(actual, (-1,1))</span>
+<span class="hljs-comment">#actual = down_saturday_scaler.inverse_transform(actual)</span>
+    
+<span class="hljs-comment"># Print the final prediction values of the last feature (target feature)</span>
+print(<span class="hljs-string">"Predicted values:"</span>, predicted)  <span class="hljs-comment"># Remove the extra dimension for readability</span>
+print(<span class="hljs-string">"Actual values:"</span>, actual)
+</div></code></pre>
+<pre class="hljs"><code><div>Predicted values: [0.49223268, 0.55302805, 0.59948254, 0.6101891, 0.68271565, 0.50707304, 0.47681022, 0.44612676, 0.42431593, 0.33253032, 0.33147523, 0.3468335, 0.30739588, 0.37064248, 0.3793793, 0.36240828, 0.75844723, 0.6545705]
+Actual values: [0.46213808 0.51670379 0.53619154 0.58296214 0.58685969 0.45712695
+ 0.39587973 0.33853007 0.30289532 0.21046771 0.19988864 0.20824053
+ 0.20211581 0.22884187 0.2188196  0.22104677 0.3435412 ]
+</div></code></pre>
+<ul>
+<li>예측 값과 실제 값 사이에 약간의 오차가 존재함을 확인할 수 있었다.</li>
+</ul>
+<br>
+<h2 id="v-related-work-eg-existing-studies">V. Related Work (e.g., existing studies)</h2>
+<ul>
+<li>Time Series Forecasting using Pytorch
+<ul>
+<li>https://www.geeksforgeeks.org/time-series-forecasting-using-pytorch/</li>
+</ul>
+</li>
+<li>Multivariate Time Series Forecasting Using LSTM
+<ul>
+<li>https://medium.com/@786sksujanislam786/multivariate-time-series-forecasting-using-lstm-4f8a9d32a509
+<br></li>
+</ul>
+</li>
+</ul>
+<h2 id="vi-conclusion-discussion">VI. Conclusion: Discussion</h2>
+<h3 id="conclusion">Conclusion</h3>
+<p>test 데이터인 2021년도의 데이터 중 2개의 데이터를 가져와 MSE 값과 R-squared score를 확인해보았다. <br>
+(hidden_size = 70  num_layers = 5 epochs = 50) <br>
+MSE는 값이 작을수록 예측이 정확하며, R-squared score는 0과 1 사이의 값을 가지는데, 1에 가까울수록 모델의 데이터 설명력이 좋은 것이다.
+<br></p>
+<ul>
+<li>
+<p>일요일 3_17~18 시간대(상선)
+<img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/228aed37-9cbe-4209-b968-f520c9a60b64" alt="image"></p>
+<pre class="hljs"><code><div>MSE: 21.9564
+R^2 Score: 0.3985
+</div></code></pre>
+<ul>
+<li>MSE가 21.9564라는 것은 예측값과 실제값 사이의 오차가 평균적으로 크지 않다고 볼 수 있다.</li>
+<li>R-squared score을 바탕으로 보면 이 모델은 데이터의 변동성의 약 39.85%를 설명한다. 이는 모델의 설명력이 조금 떨어짐을 나타낸다.
+<br></li>
+</ul>
+</li>
+<li>
+<p>일요일 5_12~13 시간대(하선)</p>
+<p><img src="https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/c9ae68fa-7f71-4c54-b640-cd7afd57d4bd" alt="image"></p>
+<pre class="hljs"><code><div>MSE: 39.9610
+R^2 Score: 0.4485
+</div></code></pre>
+<ul>
+<li>MSE가 39.9610라는 것은 앞서 예측한 데이터보다는 예측값과 실제값 사이의 오차가 커졌다고 볼 수 있다.</li>
+<li>R-squared score을 바탕으로 보면 이 모델은 데이터의 변동성의 약 44.85% 를 설명한다. 이를 바탕으로 모델의 설명력이 앞서 예측한 것보다 더 낫다는 것을 알 수 있다.</li>
+</ul>
+</li>
+</ul>
+<br>
+<h3 id="discussion">Discussion</h3>
+<p>지하철 데이터들이 환승역의 데이터가 한 쪽 노선으로 편중되어있다는 점, 기/종점에 가까운 역의 승차 인원은 한 쪽 방향으로 더 많이 몰려 있다는 점과 같이, 데이터를 다룰 때 실제와 예측을 비슷하게 하기 위해 전처리해야 하는 과정이 까다롭고 길었다.
+<br>
+LSTM 기반 예측 모델을 통한 학습이 매우 잘 되었고, 예측 결과도 실제값과 오차가 작은 편이라는 점이 긍정적이다. 하지만 모델의 설명력이 부족한 부분은 보완해야 할 것이다. 하이퍼파라미터를 조정하여 정확도를 더 높일 수 있을 것 같다.
+<br>
+또한, time_steps = 8 에서 이전 8개의 역 데이터를 보고 모델이 다음 값을 예측하는데, 이 프로젝트에서는 시간 관계상 테스트 과정에서 첫 8개의 역 데이터를 예측하지 않고 직접 정답 데이터를 주었다. 기점 부분의 역들은 이전 역 데이터의 영향을 많이 받지 않으니 random forest와 같은 회귀 모델로 먼저 예측을 한 후 lstm 모델을 돌려보면 완전한 혼잡도 예측이 가능할 것 같다.
+<br>
+딥러닝 기술을 통해 지하철 혼잡도 예측 기술을 더욱 향상시키고 고도화한다면, 유동인구가 많은 수도권의 대중교통 이용자들의 안전과 교통관리 및 편의서비스를 제공할 수 있을 것으로 보인다.</p>
+<br>
+<h2 id="vii-credits">VII. Credits</h2>
+<ul>
+<li>강민성 : data preprocessing, code implementation</li>
+<li>김승윤 : data visualization, methodology introduction</li>
+<li>오세원 : YouTube recording</li>
+<li>황윤영 : write up Github, make conclusion</li>
+</ul>
+
+</body>
+</html>
