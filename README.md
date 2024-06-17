@@ -836,5 +836,5 @@ LSTM 기반 예측 모델을 통한 학습이 매우 잘 되었고, 예측 결�
 
 <br>
 
-## VIII.Recording Link
+## VIII. Recording Link
 * https://drive.google.com/file/d/1E7InyHzHSrmLSndiRikVJgiFYkDGTPn_/view?usp=sharing
