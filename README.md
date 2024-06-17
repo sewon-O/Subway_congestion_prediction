@@ -20,7 +20,8 @@
 <br>
 
 ## I. Proposal
-![image](https://github.com/YoonYeongHwang/AIXDeepLearning/assets/170499968/a3d4eca5-5541-4cef-9804-78710188b26c)
+![image](https://i.namu.wiki/i/FwsHGZEpYOHhOzste0fP-SLcA1TXZ4x0dxpEWIqfXYTHdLtX2jAuRoN9B5HQSfLbZxgM_umEXV01_olMtwAsiw.webp)
+(사진 출처: 나무위키)
 <br>
 
 ### Motivation
@@ -419,7 +420,7 @@ print(torch.cuda.get_device_name(0))
 <br>
 
 2. 역번호가 199보다 작거나 1000보다 큰 역의 데이터를 제거하여 데이터프레임 재구성
-* 역 개수가 많지 않아 학습 데이터로 사용하기 힘든 서울 지하철 1호선(서울역~청량리역) 구간 및 2호선 신정지선, 성수지선을 제외한다. 또 분기가 있는 5호선 강동역 동쪽 구간도 제외하고, 방화~강동 구간의 데이터만을 이용한다.
+* 역 개수가 많지 않아 학습 데이터로 사용하기 힘든 서울 지하철 1호선(서울역-청량리역) 구간 및 2호선 신정지선, 성수지선을 제외한다. 또 분기가 있는 5호선 강동역 동쪽 구간도 제외하고, 방화~강동 구간의 데이터만을 이용한다.
 
 ```python
 df = pd.read_csv("2022_final.csv", encoding='cp949')
